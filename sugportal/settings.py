@@ -94,7 +94,7 @@ USE_MODELTRANSLATION = False
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 SECRET_KEY = 'vqje&(s$kn!osyitq#y%y1)g7-63#ia#+45(d&c%7x7u)d!pn3'
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'dits.pythonanywhere.com']
 
 # See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 
