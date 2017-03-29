@@ -2,6 +2,8 @@
 from __future__ import absolute_import, unicode_literals
 import os
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 from django import VERSION as DJANGO_VERSION
 from django.utils.translation import ugettext_lazy as _
 
@@ -91,8 +93,11 @@ USE_MODELTRANSLATION = False
 ########################
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
+SECRET_KEY = 'vqje&(s$kn!osyitq#y%y1)g7-63#ia#+45(d&c%7x7u)d!pn3'
+ALLOWED_HOSTS = ['127.0.0.1']
+
 # See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -143,9 +148,9 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 DATABASES = {
     "default": {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
+        "ENGINE": "django.db.backends.sqlite3",
         # DB name or path to database file if using sqlite3.
-        "NAME": "",
+        "NAME": os.path.join(BASE_DIR, 'db.sqlite3'),
         # Not used with sqlite3.
         "USER": "",
         # Not used with sqlite3.
@@ -230,6 +235,7 @@ if DJANGO_VERSION < (1, 9):
 ################
 
 INSTALLED_APPS = (
+    "flat",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
